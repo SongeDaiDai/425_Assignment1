@@ -61,7 +61,7 @@
                 <label><input  type="checkbox" name="subject" value="Horror">Horror <i class="fas fa-skull"></i></label>
             </div><br><br>
             <div class="input-container ic2">
-                <input id="price" name="price" class="input" type="number" placeholder=" " />
+                <input id="price" name="price" class="input" type="number" step="0.01" placeholder=" " />
                 <div class="cut "></div>
                 <label for="price " class="placeholder "><i class="fas fa-dollar-sign "></i> Price</label>
             </div>
