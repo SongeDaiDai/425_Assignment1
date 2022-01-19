@@ -9,7 +9,7 @@
 <body>
     <form action="BookResponse.jsp">
         <div class="form">
-            <div class="title">Welcome! <br> We Are Experts!</div>
+            <div class="title">Team 8 - Presents:</div>
             <div class="subtitle">Book and ISBN Update form</div>
 
             <div class="input-container ic1">
@@ -65,7 +65,7 @@
             </div>
             <input class="submit" type="submit" value="Add Book" />
             <p>
-                <img src="meanexpert.gif" width="50%" style="padding-left: 25%; border-radius: 5%;">
+                <img src="cat-reading.gif" width="50%" style="padding-left: 25%; border-radius: 5%;">
             </p>
         </div>
     </form>
