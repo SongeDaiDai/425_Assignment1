@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>425 - Assignment 1 Form</title>
-    <link src="/src/css/form.css" rel="stylesheet" type="text/css">
+    <link href="form.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <form action="BookResponse.jsp">
         <div class="form">
-            <div class="title">Welcome! We Are Experts!</div>
-            <div class="subtitle">Book and ISBN Update</div>
+            <div class="title">Welcome! <br> We Are Experts!</div>
+            <div class="subtitle">Book and ISBN Update form</div>
 
             <div class="input-container ic1">
                 <input id="title" class="input" type="text" placeholder=" " />
@@ -35,9 +35,8 @@
                 <div class="cut"></div>
                 <label for="price" class="placeholder">Price</label>
             </div>
-        </div>
-        <br>
-        <div class="form">
+
+
             <div class="list-container ic2">
                 <div class="subtitle">Publisher</div>
                 <select class="select" id="publisher" name="publisher" multiple>
@@ -64,13 +63,13 @@
                 <label><input  type="checkbox" name="subject" value="history">History</label>
                 <label><input  type="checkbox" name="subject" value="horror">Horror</label>
             </div>
-        </div>
-        <div class="form">
-            <br>
             <input class="submit" type="submit" value="Add Book" />
+            <p>
+                <img src="meanexpert.gif" width="50%" style="padding-left: 25%;">
+            </p>
         </div>
     </form>
-    <div class="form"><img src="/src/main/webapp/meanexpert.gif"></div>
+
 </body>
 
 </html>
