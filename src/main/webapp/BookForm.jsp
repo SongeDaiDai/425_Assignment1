@@ -1,58 +1,76 @@
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>425 - Assignment 1 Form</title>
+    <meta charset="utf-8">
+    <title>425 - Assignment 1 Form</title>
+    <link href="form.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
+    <form action="BookResponse.jsp" method="get">
+        <div class="form">
+            <div class="title">Team 8 - Presents:</div>
+            <div class="subtitle">Book and ISBN Update form</div>
 
-<form action="BookResponse.jsp">
-		<label for="title">Book title: </label>
-		<input type="text" id="title" name="title" />
-        
-        <br/>
+            <div class="input-container ic1">
+                <input id="title" name="title" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="title" class="placeholder">Book title</label>
+            </div>
 
-        <label for="author">Author: </label>
-		<input type="text" id="author" name="author" />
+            <div class="input-container ic2">
+                <input id="author" name="author" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="author" class="placeholder">Author</label>
+            </div>
 
-        <br/>
+            <div class="input-container ic2">
+                <input id="ISBN" name="ISBN" class="input" type="text" placeholder=" " required/>
+                <div class="cut"></div>
+                <label for="ISBN" class="placeholder">ISBN</label>
+            </div>
 
-        <label for="ISBN">ISBN: </label>
-        <input type="text" id="ISBN" name="ISBN" required />
-        
-        <br/>
-        
-        <label for="publisher">Publisher: </label>
-        <select id="publisher" name="publisher" multiple>
-            <option disabled selected>-- select an option --</option>
-            <option>John Wiley &amp; Sons</option>
-            <option>BigNerd Ranch</option>
-            <option>Industrial Press</option>
-            <option>Armond Dalton</option>
-        </select>
 
-        <br/>
 
-        <label><input type="radio" name="edition" value="hardcover" />Hardcover</label>
-        <label><input type="radio" name="edition" value="paperback" />Paperback</label>
 
-        <br/>
+            <div class="list-container ic2">
+                <div class="subtitle">Publisher</div>
+                <select class="select" id="publisher" name="publisher" multiple>
+                    <option disabled selected>-- select an option --</option>
+                    <option class="option">John Wiley &amp; Sons</option>
+                    <option class="option">BigNerd Ranch</option>
+                    <option class="option">Industrial Press</option>
+                    <option class="option">Armond Dalton</option>
+                </select>
+                <div class="cut"></div>
+                <label for="publisher" class="placeholder"></label>
+            </div>
 
-        Subject:
-        <label><input type="checkbox" name="subject" value="classic">Classic</label>
-        <label><input type="checkbox" name="subject" value="fantasy">Fantasy</label>
-        <label><input type="checkbox" name="subject" value="history">History</label>
-        <label><input type="checkbox" name="subject" value="horror">Horror</label>
+            <div class="input-container ic2">
+                <div class="subtitle">Version</div>
+                <label><input  type="radio" name="edition" value="hardcover" />Hardcover</label>
+                <label><input  type="radio" name="edition" value="paperback" />Paperback</label>
+            </div>
 
-        <br/>
-
-        <label for="price">Price: </label>
-        <input type="text" id="price" name="price" />
-
-        <br/>
-
-        <input type="submit" value="Add book" />
-
-	</form>
+            <div class="input-container">
+                <div class="subtitle">Subject</div>
+                <label><input  type="checkbox" name="subject" value="classic">Classic</label>
+                <label><input  type="checkbox" name="subject" value="fantasy">Fantasy</label>
+                <label><input  type="checkbox" name="subject" value="history">History</label>
+                <label><input  type="checkbox" name="subject" value="horror">Horror</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="price" name="price" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="price" class="placeholder">Price</label>
+            </div>
+            <input class="submit" type="submit" value="Add Book" />
+            <p>
+                <img src="cat-reading.gif" width="50%" style="padding-left: 25%; border-radius: 5%;">
+            </p>
+        </div>
+    </form>
 
 </body>
+
 </html>

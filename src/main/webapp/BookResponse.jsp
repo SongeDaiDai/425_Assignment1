@@ -31,7 +31,7 @@
 		}
 	%>
 	</ul>
-	Price: ${param.price};
+	Price: ${param.price}
 	
 </body>
 </html>
