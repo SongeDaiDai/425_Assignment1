@@ -65,7 +65,7 @@
             </div>
             <input class="submit" type="submit" value="Add Book" />
             <p>
-                <img src="meanexpert.gif" width="50%" style="padding-left: 25%;">
+                <img src="meanexpert.gif" width="50%" style="padding-left: 25%; border-radius: 5%;">
             </p>
         </div>
     </form>
