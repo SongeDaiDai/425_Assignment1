@@ -12,8 +12,7 @@
         <div class="form">
             <div class="super">Assignment 1 <i class="fas fa-keyboard"></i></div><br>
             <div class="subtitle" style="font-size: 1.4rem; color: #B9BFB8;"><i class="fas fa-book"></i> Book & <i class="fas fa-barcode"></i> ISBN Update form</div>
-
-            <div class="input-container ic1">
+            <div class="input-container ic2">
                 <input id="title" name="title" class="input" type="text" placeholder=" " />
                 <div class="cut"></div>
                 <label for="title" class="placeholder"><i class="fas fa-book"></i> Book title</label>
