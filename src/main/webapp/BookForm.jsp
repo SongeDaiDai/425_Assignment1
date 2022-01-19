@@ -7,34 +7,30 @@
 </head>
 
 <body>
-    <form action="BookResponse.jsp">
+    <form action="BookResponse.jsp" method="get">
         <div class="form">
             <div class="title">Team 8 - Presents:</div>
             <div class="subtitle">Book and ISBN Update form</div>
 
             <div class="input-container ic1">
-                <input id="title" class="input" type="text" placeholder=" " />
+                <input id="title" name="title" class="input" type="text" placeholder=" " />
                 <div class="cut"></div>
                 <label for="title" class="placeholder">Book title</label>
             </div>
 
             <div class="input-container ic2">
-                <input id="author" class="input" type="text" placeholder=" " />
+                <input id="author" name="author" class="input" type="text" placeholder=" " />
                 <div class="cut"></div>
                 <label for="author" class="placeholder">Author</label>
             </div>
 
             <div class="input-container ic2">
-                <input id="ISBN" class="input" type="text" placeholder=" " required/>
+                <input id="ISBN" name="ISBN" class="input" type="text" placeholder=" " required/>
                 <div class="cut"></div>
                 <label for="ISBN" class="placeholder">ISBN</label>
             </div>
 
-            <div class="input-container ic2">
-                <input id="price" class="input" type="text" placeholder=" " />
-                <div class="cut"></div>
-                <label for="price" class="placeholder">Price</label>
-            </div>
+
 
 
             <div class="list-container ic2">
@@ -47,7 +43,7 @@
                     <option class="option">Armond Dalton</option>
                 </select>
                 <div class="cut"></div>
-                <label for="publisher" class="placeholde"></label>
+                <label for="publisher" class="placeholder"></label>
             </div>
 
             <div class="input-container ic2">
@@ -62,6 +58,11 @@
                 <label><input  type="checkbox" name="subject" value="fantasy">Fantasy</label>
                 <label><input  type="checkbox" name="subject" value="history">History</label>
                 <label><input  type="checkbox" name="subject" value="horror">Horror</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="price" name="price" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="price" class="placeholder">Price</label>
             </div>
             <input class="submit" type="submit" value="Add Book" />
             <p>
