@@ -6,35 +6,57 @@
     <title>425 - Assignment 1 Form</title>
     <link href="form.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/a5769a4d9e.js" crossorigin="anonymous"></script>
+    <script src="form.js" type="text/javascript"></script>
 </head>
 
 <body>
     <main>
-        <h1>Assignment 1</h1>
-        <form action="BookResponse.jsp" method="get">
-            <div class="form">
 
+        <form id="bookForm" action="BookResponse.jsp" method="get">
+            <div class="form">
+                <h1 class="form0">Assignment 1</h1>
                 <h2><i class="fas fa-book-open"></i>&nbsp;&nbsp; Book & ISBN Update form</h2>
 
-                <div class="input-container ic2">
+                <div class="input-container ic2 form1">
                     <input id="title" name="title" class="input" type="text" placeholder=" " />
                     <div class="cut"></div>
-                    <label for="title" class="placeholder"><i class="fas fa-book"></i>&nbsp;&nbsp; Book title</label>
+                    <label for="title" class="placeholder"><i class="fas fa-book"></i>&nbsp; Book title</label>
                 </div>
 
-                <div class="input-container ic2">
+
+
+                <div class="input-container ic2 form2">
                     <input id="author" name="author" class="input" type="text" placeholder=" " />
                     <div class="cut"></div>
-                    <label for="author" class="placeholder"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp; Author</label>
+                    <label for="author" class="placeholder"><i class="fas fa-pencil-alt"></i>&nbsp; Author</label>
                 </div>
 
-                <div class="input-container ic2">
-                    <input id="ISBN" name="ISBN" class="input" type="text" placeholder=" " required />
-                    <div class="cut"></div>
-                    <label for="ISBN" class="placeholder"><i class="fas fa-barcode"></i>&nbsp;&nbsp; ISBN</label>
+
+                <div class="input-container ic2 form3">
+                    <input id="ISBN10" name="ISBN10" class="input" type="number" placeholder=" " onkeyup="checkBin10()" required />
+                    <div class="cut"> </div>
+                    <label for="ISBN10" class="placeholder"><i class="fas fa-barcode"></i>&nbsp;  ISBN-10</label>
+                    <div id="i10" style="color: darkred; text-align: right;"> </div>
+
                 </div>
 
-                <div class="ic2">
+                <div class="input-container ic2 form4">
+                    <input id="ISBN13" name="ISBN13" class="input" type="number" placeholder=" " onkeyup="checkBin13()" />
+                    <div class="cut"> </div>
+                    <label for="ISBN13" class="placeholder"> <i class="fas fa-barcode"></i>&nbsp; ISBN-13</label>
+                    <div id="i13" style="color: darkred; text-align: right;"> </div>
+
+                </div>
+                
+                <div class="input-container ic2 form8">
+                    <input id="price" name="price" class="input" type="number" step="0.01" placeholder=" " onkeyup="checkValue()" />
+                    <div id="cost" class="error"> </div>
+                    <div class="cut "></div>
+
+                    <label for="price" class="placeholder "><i class="fas fa-dollar-sign "></i>&nbsp;&nbsp; Price </label>
+                </div>
+                
+                <div class="ic2 form5">
                     <h3><i class="fas fa-heading"></i>&nbsp;&nbsp; Publisher</h3>
                     <select class="select" id="publisher" name="publisher" multiple>
                         <option class="option">John Wiley &amp; Sons</option>
@@ -46,34 +68,38 @@
                     <label for="publisher" class="placeholder"></label>
                 </div>
 
-                <div class="input-container ic2">
+
+                <div class="input-container ic2 form6">
                     <h3><i class="fas fa-comment-alt"></i>&nbsp;&nbsp; Edition</h3>
-                    <label><input type="radio" name="edition" value="Hardcover" />&nbsp;&nbsp;Hardcover &nbsp;&nbsp;<i
+                    <label><input class="radio-option" type="radio" name="edition" value="Hardcover" />&nbsp;&nbsp;Hardcover &nbsp;&nbsp;<i
                             class="fas fa-journal-whills"></i></label>
                     <label class="radio-option"><input type="radio" name="edition" value="Paperback" />&nbsp;&nbsp;Paperback &nbsp;&nbsp;<i
                             class="fas fa-scroll"></i></label>
                 </div>
 
-                <div class="input-container">
+
+                <div class="input-container ic2 form7">
                     <h3><i class="fas fa-feather-alt"></i>&nbsp;&nbsp; Subject</h3>
-                    <label><input type="checkbox" name="subject" value="Classic"> Classic &nbsp;&nbsp; <i
-                            class="fas fa-signature"></i></label>
-                    <label class="radio-option"><input type="checkbox" name="subject" value="Fantasy"> Fantasy &nbsp;&nbsp; <i
-                            class="fas fa-dragon"></i></label>
-                    <label class="radio-option"><input type="checkbox" name="subject" value="History"> History &nbsp;&nbsp; <i
-                            class="fas fa-landmark"></i></label>
-                    <label class="radio-option"><input type="checkbox" name="subject" value="Horror"> Horror &nbsp;&nbsp; <i
-                            class="fas fa-skull"></i></label>
+                    <div class="content1">
+                        <label class="radio-option e1"><input type="checkbox" name="subject" value="Classic">&nbsp; Classic &nbsp;
+                            <i class="fas fa-signature"></i></label>
+                        <label class="radio-option e2"><input type="checkbox" name="subject" value="Fantasy">&nbsp; Fantasy &nbsp;
+                        <i class="fas fa-dragon"></i><br/></label>
+                        <label class="radio-option e3"><input type="checkbox" name="subject" value="History">&nbsp;History &nbsp;
+                        <i class="fas fa-landmark"></i></label>
+                        <label class="radio-option e4"><input type="checkbox" name="subject" value="Horror">&nbsp;Horror&nbsp;
+                        <i class="fas fa-skull"></i></label>
+                    </div>
+
                 </div>
 
-                <div class="input-container ic2">
-                    <input id="price" name="price" class="input" type="number" step="0.01" placeholder=" " />
-                    <div class="cut "></div>
-                    <label for="price " class="placeholder "><i class="fas fa-dollar-sign "></i>&nbsp;&nbsp; Price</label>
-                </div>
-                <input class="submit" type="submit" value="Add Book" />
+
+
+                <input class="submit form9" type="submit" value="Add Book" onclick="sendForm()" />
 
             </div>
+            </div>
+
         </form>
     </main>
 
