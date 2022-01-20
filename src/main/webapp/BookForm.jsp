@@ -6,10 +6,40 @@
     <title>425 - Assignment 1 Form</title>
     <link href="form.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/a5769a4d9e.js" crossorigin="anonymous"></script>
-    <script src="form.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+$( "bookForm" ).submit(function( event ) {
+  if ( $( "price" ).first().val() >= 50.00 && $( "price" ).first().val() <= 500.00 ) {
+    let priceChk = true;
+    return;
+  }
+ 	let priceChk = false;
+  $( "cost" ).text( "The Price must be between 50.00$ and 500.00$" ).show().fadeOut( 1000 );
+  event.preventDefault();
+});
+$( "bookForm" ).submit(function( event ) {
+  if ( $( "ISBN10" ).first().val().lenght() = 10 && $( "ISBN10" ).first().val().isNumeric()) {
+    let isbn10Chk = true;
+    return;
+  }
+ 	let isbn10Chk = false;
+  $( "error10" ).text( "ISBN-10 must have 10 digits and is mandatory." ).show().fadeOut( 1000 );
+  event.preventDefault();
+});
+$( "bookForm" ).submit(function( event ) {
+  if ( $( "ISBN13" ).first().val().lenght() = 13 && $( "ISBN13" ).first().val().lenght() > 0) {
+    let isbn13Chk = true;
+    return;
+  }
+ 	let isbn13Chk = false;
+  $( "error10" ).text( "ISBN-13 must have 13 digits" ).show().fadeOut( 1000 );
+  event.preventDefault();
+});
+</script>
 </head>
 
 <body>
+
     <main>
 
         <form id="bookForm" action="BookResponse.jsp" method="get">
@@ -33,23 +63,23 @@
 
 
                 <div class="input-container ic2 form3">
-                    <input id="ISBN10" name="ISBN10" class="input" type="number" placeholder=" " onkeyup="checkBin10()" required />
+                    <input id="ISBN10" name="ISBN10" class="input" type="number" placeholder=" " />
                     <div class="cut"> </div>
                     <label for="ISBN10" class="placeholder"><i class="fas fa-barcode"></i>&nbsp;  ISBN-10</label>
-                    <div id="i10" style="color: darkred; text-align: right;"> </div>
+                    <div id="error10" style="color: darkred; text-align: right;"> </div>
 
                 </div>
 
                 <div class="input-container ic2 form4">
-                    <input id="ISBN13" name="ISBN13" class="input" type="number" placeholder=" " onkeyup="checkBin13()" />
+                    <input id="ISBN13" name="ISBN13" class="input" type="number" placeholder=" " />
                     <div class="cut"> </div>
                     <label for="ISBN13" class="placeholder"> <i class="fas fa-barcode"></i>&nbsp; ISBN-13</label>
-                    <div id="i13" style="color: darkred; text-align: right;"> </div>
+                    <div id="error13" style="color: darkred; text-align: right;"> </div>
 
                 </div>
                 
                 <div class="input-container ic2 form8">
-                    <input id="price" name="price" class="input" type="number" step="0.01" placeholder=" " onkeyup="checkValue()" />
+                    <input id="price" name="price" class="input" type="number" step="0.01" placeholder=" "/>
                     <div id="cost" class="error"> </div>
                     <div class="cut "></div>
 
@@ -95,7 +125,7 @@
 
 
 
-                <input class="submit form9" type="submit" value="Add Book" onclick="sendForm()" />
+                <input class="submit form9" type="submit" value="Add Book" />
 
             </div>
             </div>

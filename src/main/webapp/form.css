@@ -8,6 +8,7 @@ body {
     height: 100vh;
     color: #eee;
     flex-wrap: wrap;
+    align-items: center;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -19,6 +20,8 @@ main {
     margin: 3rem;
     width: 50%;
     color: #eee;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 h1 {
@@ -42,7 +45,7 @@ h3 {
     margin: 2em 0 .75em;
 }
 
-h3.margin-correction{
+h3.margin-correction {
     margin-top: calc(2em + 80px);
 }
 
@@ -53,8 +56,6 @@ h3.margin-correction{
     font-weight: 600;
     margin-top: 30px;
 }
-
-
 
 .added {
     color: darkgreen;
@@ -107,6 +108,29 @@ h3.margin-correction{
     margin-top: 2em;
 }
 
+.ic3 {
+    margin-top: 50px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+}
+
+.content1 {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.form0 .form1 .form2 .form3 .form4 .form5 .form6 .form7 .form8 .form9 {
+    color: inherit;
+}
+
+.e1 .e2 .e3 .e4 {
+    min-width: 35px;
+}
+
 .input {
     background-color: #303245;
     border-radius: 12px;
@@ -118,6 +142,7 @@ h3.margin-correction{
     outline: 0;
     padding: 4px 20px 0;
     width: 100%;
+    min-width: auto;
 }
 
 .select {
@@ -134,7 +159,7 @@ h3.margin-correction{
 }
 
 select option {
-    padding: 10px 10px 10px 15px ;
+    padding: 10px 10px 10px 15px;
 }
 
 select option:active,
