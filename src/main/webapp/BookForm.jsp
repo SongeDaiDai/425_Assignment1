@@ -7,35 +7,7 @@
     <link href="form.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/a5769a4d9e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-$( "bookForm" ).submit(function( event ) {
-  if ( $( "price" ).first().val() >= 50.00 && $( "price" ).first().val() <= 500.00 ) {
-    let priceChk = true;
-    return;
-  }
- 	let priceChk = false;
-  $( "cost" ).text( "The Price must be between 50.00$ and 500.00$" ).show().fadeOut( 1000 );
-  event.preventDefault();
-});
-$( "bookForm" ).submit(function( event ) {
-  if ( $( "ISBN10" ).first().val().lenght() = 10 && $( "ISBN10" ).first().val().isNumeric()) {
-    let isbn10Chk = true;
-    return;
-  }
- 	let isbn10Chk = false;
-  $( "error10" ).text( "ISBN-10 must have 10 digits and is mandatory." ).show().fadeOut( 1000 );
-  event.preventDefault();
-});
-$( "bookForm" ).submit(function( event ) {
-  if ( $( "ISBN13" ).first().val().lenght() = 13 && $( "ISBN13" ).first().val().lenght() > 0) {
-    let isbn13Chk = true;
-    return;
-  }
- 	let isbn13Chk = false;
-  $( "error10" ).text( "ISBN-13 must have 13 digits" ).show().fadeOut( 1000 );
-  event.preventDefault();
-});
-</script>
+
 </head>
 
 <body>
@@ -77,15 +49,15 @@ $( "bookForm" ).submit(function( event ) {
                     <div id="error13" style="color: darkred; text-align: right;"> </div>
 
                 </div>
-                
+
                 <div class="input-container ic2 form8">
-                    <input id="price" name="price" class="input" type="number" step="0.01" placeholder=" "/>
+                    <input id="price" name="price" class="input" type="number" step="0.01" placeholder=" " />
                     <div id="cost" class="error"> </div>
                     <div class="cut "></div>
 
                     <label for="price" class="placeholder "><i class="fas fa-dollar-sign "></i>&nbsp;&nbsp; Price </label>
                 </div>
-                
+
                 <div class="ic2 form5">
                     <h3><i class="fas fa-heading"></i>&nbsp;&nbsp; Publisher</h3>
                     <select class="select" id="publisher" name="publisher" multiple>
@@ -131,6 +103,35 @@ $( "bookForm" ).submit(function( event ) {
             </div>
 
         </form>
+        <script>
+            $("bookForm").submit(function(event) {
+                if ($("price").first().val() >= 50.00 && $("price").first().val() <= 500.00) {
+                    let priceChk = true;
+                    return;
+                }
+                let priceChk = false;
+                $("cost").text("The Price must be between 50.00$ and 500.00$").show().fadeOut(1000);
+                event.preventDefault();
+            });
+            $("bookForm").submit(function(event) {
+                if ($("ISBN10").first().val().lenght() = 10 && $("ISBN10").first().val().isNumeric()) {
+                    let isbn10Chk = true;
+                    return;
+                }
+                let isbn10Chk = false;
+                $("error10").text("ISBN-10 must have 10 digits and is mandatory.").show().fadeOut(1000);
+                event.preventDefault();
+            });
+            $("bookForm").submit(function(event) {
+                if ($("ISBN13").first().val().lenght() = 13 && $("ISBN13").first().val().lenght() > 0) {
+                    let isbn13Chk = true;
+                    return;
+                }
+                let isbn13Chk = false;
+                $("error10").text("ISBN-13 must have 13 digits").show().fadeOut(1000);
+                event.preventDefault();
+            });
+        </script>
     </main>
 
 
