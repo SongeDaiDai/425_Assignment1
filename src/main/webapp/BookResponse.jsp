@@ -43,7 +43,7 @@
         </ul>
         <hr class="rounded">
         <div class="price form6" style="padding-bottom: 2rem; text-align: right;">Price: <b>${param.price}</b> <i class="fas fa-dollar-sign" style="color: darkgray;"></i> </div>
-
+<img src="assets/images/cat-reading.gif"></img>
     </second>
 
 </body>

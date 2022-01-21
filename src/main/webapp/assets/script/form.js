@@ -7,14 +7,20 @@ function checkValue() {
     // get value of price from form
     // If price < 50 && >500 error display
     let errorCost;
-    if (price < 50 && price !== 0 || price > 500 && price !== 0) {
+    if (price === null){
+	errorCost = "";
+        document.getElementById("cost").innerHTML = errorCost;
+	cost = true;
+	return;
+	}
+	else if (price < 50 && price !== 0 || price > 500 && price !== 0) {
         errorCost = "The Price must be between 50.00$ and 500.00$";
         document.getElementById("cost").innerHTML = errorCost;
-        return false;
+        cost = false;
     } else {
-        errorCost = " ";
+        errorCost = "";
         document.getElementById("cost").innerHTML = errorCost;
-        return true;
+        cost = true;
     }
 }
 
@@ -25,7 +31,7 @@ function testB10() {
     error10;
     // If x is Not a Number or less than one or greater than 10
     if (len10 === 0) {
-        error10 = "ISBN-10 is mandatory. Please enter a 10 digits.";
+        error10 = "ISBN-10 is mandatory. Please enter a 10 digits number.";
         document.getElementById("error10").innerHTML = error10;
         b10 = false;
         return;
@@ -37,7 +43,7 @@ function testB10() {
         return;
     }
     if (len10 === 10) {
-        error10 = "All Good " + isbn10 + " " + len10;
+        error10 = "";
         document.getElementById("error10").innerHTML = error10;
         b10 = true;
 
@@ -56,7 +62,7 @@ function testB13() {
         return;
     }
     if (len13 === 13) {
-        error13 = " " + b13 + b10 + cost;
+        error13 = " ";
         document.getElementById("error13").innerHTML = error13;
         b13 = true;
         return;
@@ -64,7 +70,7 @@ function testB13() {
     if (len13 !== 13) {
         error13 = "You have entered " + len13 + " digits. Please enter 13.";
         document.getElementById("error13").innerHTML = error13;
-
+		b13 = false;
     }
 
 }
@@ -73,8 +79,11 @@ function submitForm() {
     if (!(b13 && b10 && cost)) {
         document.getElementById("bookForm").addEventListener("submit", function (forSub) {
             forSub.preventDefault();
-            errorForm = "Please verify all of your entries. " + cost + " " + b10 + " " + b13;
+            errorForm = "Please verify all of your entries.";
             document.getElementById("errorForm").innerHTML = errorForm;
         }, false);
+    }
+    else {
+    	return;
     }
 }

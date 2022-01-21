@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Roboto+Condensed&display=swap');
 body {
     align-items: center;
     background-color: #000;
@@ -78,10 +78,11 @@ h3.margin-correction {
     padding-top: 1.0em;
 }
 .error{
-	font-size: 0.9rem;
-	margin: 5px;
+	font-size: 16px;
+	margin: 1px;
 	text-align: right;
-	color: darkred;
+	color: #d95d67;
+	font-family: Dongle;
 }
 .entries {
     color: #B9BFB8;
