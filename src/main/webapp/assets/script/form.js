@@ -89,7 +89,7 @@ function submitForm() {
 function OpenWindowWithPost()
 {
     let form = document.getElementById("bookForm");
-    form.setAttribute("method", "post");
-    form.submit();
+    form.setAttribute("method", "get");
+	form.submit();
     window.open("BookResponse.jsp","_self",);
-}
+	}

@@ -47,8 +47,8 @@
         <div class="price">Price:&nbsp;<b>
         <%
         String price = request.getParameter("price");
-        double d = Double.parseDouble(price);
-        out.print(String.format("%,.2f", d));
+        float f = Float.parseFloat(price);
+        out.print("%,.2f", f);
         %>
         </b>&nbsp;<i class="fas fa-dollar-sign" style="color: darkgray;"></i> </div>
 	<div><img class="round" src="assets/images/cat-reading.gif"></img></div>
