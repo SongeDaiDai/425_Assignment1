@@ -42,7 +42,7 @@
             </div>
 
                 <div class="input-container ic2 form8">
-                    <input id="price" name="price" class="input" type="number" step="0.0000000001" placeholder=" "
+                    <input id="price" name="price" class="input" type="number" step="0.01" placeholder=" "
                            onfocusout="checkValue()"/>
                     <div id="cost" class="error fadeOut"></div>
                     <div class="cut "></div>
