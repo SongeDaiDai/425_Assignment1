@@ -3,36 +3,37 @@
 <head>
     <meta charset="utf-8">
     <title>425 - Assignment 1 Response</title>
-    <link href="form.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/form.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/a5769a4d9e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="col">
-
-        <div class="form row">
-            <div class="super">Assignment 1 <i class="fas fa-keyboard"></i></div><br>
-            <span class="added" id="success"><i class="fas fa-check-double"></i> The book has been added.</span><br/>
-            <hr class="rounded">
-            <br/>
-            <span class="entries"><i class=" fas fa-book"></i> Book title:</span> ${param.title}<br/><span class="entries"><i class="fas fa-pencil-alt padthis "></i> Author:</span> ${param.author}<br/> <span class="entries"><i class="fas fa-barcode padthis "></i> ISBN:</span>            ${param.ISBN}
-            <br/><br/>
-            <hr class="rounded"><br/>
-            <span class="entries"><i class="fas fa-heading"></i> Publisher:</span>
-            <ul>
-                <%	
+    <second>
+    <div style="width: 100%; align-items: center;">
+        <h1>Assignment 1&nbsp;&nbsp;<i class="fas fa-keyboard"></i></h1>
+        <h2 class=" added " id="success"><i class="fas fa-check-double"></i>&nbsp;&nbsp;The book has been added.</h2>
+        <hr class="rounded">
+        <div class="entries"><i class="fas fa-book"></i>&nbsp;&nbsp;Book title:<span style="font-size: 1rem; color: #fff;">&nbsp;&nbsp;${param.title}</span></div>
+        <div class="entries"><i class="fas fa-pencil-alt"></i> Author:<span style="font-size: 1rem; color: #fff;">&nbsp;&nbsp; ${param.author}</span></div>
+        <div class="entries"><i class="fas fa-barcode"></i>&nbsp;&nbsp;ISBN-10:<span style="font-size: 1rem; color: #fff;">&nbsp;&nbsp;${param.ISBN10}</span></div> 
+        <div class="entries"><i class="fas fa-barcode"></i>&nbsp;&nbsp;ISBN-13:<span style="font-size: 1rem; color: #fff;">&nbsp;&nbsp; ${param.ISBN13}</span></div>
+        
+        <hr class="rounded"><br/>
+        <div class=" entries "><i class="fas fa-heading"></i>&nbsp;&nbsp;Publisher:</div>
+        <ul>
+            <%	
 		String[] publishers = request.getParameterValues("publisher");
 		if(publishers != null) {
 			for(String publisher : publishers) {
 				out.print("<li>" + publisher + "</li>"); } } %>
-            </ul>
-            <span class="entries"><i class="fab fa-firstdraft"></i> Edition: </span>
-            <ul>
-                <li>${param.edition}</li>
-            </ul>
-            <span class="entries"><i class="fas fa-feather-alt"></i> Subject(s): </span>
-            <ul>
-                <%	
+        </ul>
+        <div class=" entries "><i class="fab fa-firstdraft"></i>&nbsp;&nbsp;Edition: </div>
+        <ul>
+            <li>${param.edition}</li>
+        </ul>
+        <div class=" entries "><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;Subject(s): </div>
+        <ul>
+            <%	
 		String[] subjects = request.getParameterValues("subject");
 		if(subjects != null) {
 			for(String subject : subjects) {
@@ -40,12 +41,20 @@
 			}	
 		}
 	%>
-            </ul>
-            <hr class="rounded">
-            <div class="price" style="padding-bottom: 2rem; text-align: right;">Price: <b>${param.price}</b> <i class="fas fa-dollar-sign" style="color: darkgray;"></i> </div>
+        </ul>
+        <hr class="rounded">
+        
+        <div class="price">Price:&nbsp;<b>
+        <%
+        String price = request.getParameter("price");
+        float f = Float.parseFloat(price);
+        out.print("%,.2f", f);
+        %>
+        </b>&nbsp;<i class="fas fa-dollar-sign" style="color: darkgray;"></i> </div>
+	<div><img class="round" src="assets/images/cat-reading.gif"></img></div>
+</div>
+    </second>
 
-        </div>
-    </div>
 </body>
 
 </html>
