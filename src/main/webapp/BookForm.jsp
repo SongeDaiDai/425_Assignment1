@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>425 - Assignment 1 Form</title>
     <link href="form.css" rel="stylesheet" type="text/css">
-    <script src="https://kit.fontawesome.com/a5769a4d9e.js" crossorigin="anonymous"></script>
     <script src="form.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/a5769a4d9e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <form id="bookForm" action="BookResponse.jsp" method="get">
             <div class="form">
                 <h1 class="form0">Assignment 1</h1>
-                <h2><i class="fas fa-book-open"></i>&nbsp;&nbsp; Book & ISBN Update form</h2>
+                <h2><i class="fas fa-book-open"></i>&nbsp;&nbsp; Book &amp; ISBN Update form</h2>
 
                 <div class="input-container ic2 form1">
                     <input id="title" name="title" class="input" type="text" placeholder=" " />
@@ -97,9 +97,10 @@
 
 
                 <input name="send" class="submit form9" type="submit" value="Add Book" onclick="sendForm()" />
+                <label for="send">Add The Book &nbsp;&nbsp;<i class="fas fa-paper-plane"></i></label>
 
             </div>
-            </div>
+           </div>
 
         </form>
 
