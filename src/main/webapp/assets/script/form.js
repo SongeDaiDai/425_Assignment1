@@ -4,8 +4,6 @@ cost = true;
 
 function checkValue() {
     let price = document.getElementById('price').value;
-    // get value of price from form
-    // If price < 50 && >500 error display
     let errorCost;
     if (price === null){
 	errorCost = "";
@@ -26,10 +24,8 @@ function checkValue() {
 
 function testB10() {
     let isbn10 = document.getElementById("ISBN10").value;
-    // Get the value of the input field with id="ISBN10"
     let len10 = isbn10.length;
     error10;
-    // If x is Not a Number or less than one or greater than 10
     if (len10 === 0) {
         error10 = "ISBN-10 is mandatory. Please enter a 10 digits number.";
         document.getElementById("error10").innerHTML = error10;
@@ -37,7 +33,7 @@ function testB10() {
         return;
     }
     if (len10 !== 10) {
-        error10 = "You have entered " + len10 + " digits. Please enter 10.";
+        error10 = "You have entered " + len10 + " digits out of 10.";
         document.getElementById("error10").innerHTML = error10;
         b10 = false;
         return;
@@ -68,22 +64,32 @@ function testB13() {
         return;
     }
     if (len13 !== 13) {
-        error13 = "You have entered " + len13 + " digits. Please enter 13.";
+        error13 = "You have entered " + len13 + " out of 13.";
         document.getElementById("error13").innerHTML = error13;
 		b13 = false;
     }
 
 }
+function urlConstructor(){
+
+}
 
 function submitForm() {
-    if (!(b13 && b10 && cost)) {
+    if (b13 && b10 && cost) {
+        OpenWindowWithPost();
+    } else {
         document.getElementById("bookForm").addEventListener("submit", function (forSub) {
             forSub.preventDefault();
-            errorForm = "Please verify all of your entries.";
+            let errorForm = "Please verify all of your entries.";
             document.getElementById("errorForm").innerHTML = errorForm;
         }, false);
     }
-    else {
-    	return;
-    }
+}
+
+function OpenWindowWithPost()
+{
+    let form = document.getElementById("bookForm");
+    form.setAttribute("method", "post");
+    form.submit();
+    window.open("BookResponse.jsp","_self",);
 }

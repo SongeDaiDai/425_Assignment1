@@ -9,16 +9,17 @@
 
 <body>
     <second>
-        <div class="super form0">Assignment 1 <i class="fas fa-keyboard"></i></div><br>
-        <span class="added form1" id="success"><i class="fas fa-check-double"></i> The book has been added.</span>
-        <br/>
+    <div style="width: 100%; align-items: center;">
+        <h1>Assignment 1&nbsp;&nbsp;<i class="fas fa-keyboard"></i></h1>
+        <h2 class="limit added form0" id="success"><i class="fas fa-check-double"></i>&nbsp;&nbsp;The book has been added.</h2>
         <hr class="rounded">
+        <span class="limit entries form0"><i class="fas fa-book"></i>&nbsp;&nbsp;Book title:</span>&nbsp; ${param.title}
+        <span class="limit entries form0"><i class="fas fa-pencil-alt"></i> Author:</span>&nbsp; ${param.author}
+        <span class="limit entries form0"><i class="fas fa-barcode"></i>&nbsp;&nbsp;ISBN-10:</span>&nbsp;${param.ISBN10} 
+        <span class="limit entries form0"><i class="fas fa-barcode"></i>&nbsp;&nbsp;ISBN-13:</span>&nbsp; ${param.ISBN13}
         <br/>
-        <span class="entries form2"><i class="fas fa-book"></i> Book title:</span> ${param.title}<br/><span class="entries"><i class="fas fa-pencil-alt pad1 "></i> Author:</span> ${param.author}<br/> <span class="entries"><i class="fas fa-barcode pad1 "></i> ISBN-10:</span>        ${param.ISBN10}
-        <br/> <span class="entries form"><i class="fas fa-barcode pad1 "></i> ISBN-13:</span> ${param.ISBN13}
-        <br/><br/>
         <hr class="rounded"><br/>
-        <span class="entries form3"><i class="fas fa-heading"></i> Publisher:</span>
+        <span class="limit entries form0"><i class="fas fa-heading"></i>&nbsp;&nbsp;Publisher:</span>
         <ul>
             <%	
 		String[] publishers = request.getParameterValues("publisher");
@@ -26,11 +27,11 @@
 			for(String publisher : publishers) {
 				out.print("<li>" + publisher + "</li>"); } } %>
         </ul>
-        <span class="entries form4"><i class="fab fa-firstdraft"></i> Edition: </span>
+        <span class="limit entries form0"><i class="fab fa-firstdraft"></i>&nbsp;&nbsp;Edition: </span>
         <ul>
             <li>${param.edition}</li>
         </ul>
-        <span class="entries form5"><i class="fas fa-feather-alt"></i> Subject(s): </span>
+        <span class="limit entries form0"><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;Subject(s): </span>
         <ul>
             <%	
 		String[] subjects = request.getParameterValues("subject");
@@ -42,8 +43,9 @@
 	%>
         </ul>
         <hr class="rounded">
-        <div class="price form6" style="padding-bottom: 2rem; text-align: right;">Price: <b>${param.price}</b> <i class="fas fa-dollar-sign" style="color: darkgray;"></i> </div>
-<img src="assets/images/cat-reading.gif"></img>
+        <div class="price">Price:&nbsp;<b>${param.price}</b>&nbsp;&nbsp;<i class="fas fa-dollar-sign" style="color: darkgray;"></i> </div>
+	<img class="round" style="justify-content: center;" src="assets/images/cat-reading.gif"></img>
+</div>
     </second>
 
 </body>

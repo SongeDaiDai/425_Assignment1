@@ -30,8 +30,10 @@ second {
     box-sizing: border-box;
     padding: 4rem;
     margin: 3rem;
-    width: 75%;
+    width: 60%;
     color: #eee;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -144,6 +146,7 @@ h3.margin-correction {
 
 .form0 .form1 .form2 .form3 .form4 .form5 .form6 .form7 .form8 .form9 {
     color: inherit;
+    flex: flex-end;
 }
 
 .e1 .e2 .e3 .e4 {
@@ -177,7 +180,16 @@ h3.margin-correction {
     min-width: 100%;
     text-align: center;
 }
-
+.limit{
+	display: flex;
+	flex-wrap: nowrap;
+}
+.round {
+   border-radius: 10px;
+   border: 0;
+   box-sizing: border-box;
+   max-width: 15%;
+}
 select option {
     padding: 10px 10px 10px 15px;
 }
