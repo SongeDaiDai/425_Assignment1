@@ -7,8 +7,6 @@ body {
     justify-content: center;
     height: 100vh;
     color: #eee;
-    flex-wrap: wrap;
-    align-items: center;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -268,7 +266,7 @@ select option:focus {
     background-color: #06b;
 }
 
-.padthis {
+.pad1 {
     padding-top: 1.0em;
     font-size: 1.4rem;
 }
@@ -348,4 +346,5 @@ hr.rounded {
   }
   100% {
     opacity:0;
+}
 }
