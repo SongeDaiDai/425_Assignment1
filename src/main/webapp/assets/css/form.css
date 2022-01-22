@@ -10,7 +10,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-main {
+.mainp {
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
@@ -24,7 +24,7 @@ main {
     justify-content: center;
 }
 
-second {
+.reply {
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
@@ -313,13 +313,13 @@ hr.rounded {
     border-radius: 3px;
 }
 .fade-out {
-  animation: fadeOut ease 8s;
-  -webkit-animation: fadeOut ease 8s;
-  -moz-animation: fadeOut ease 8s;
-  -o-animation: fadeOut ease 8s;
-  -ms-animation: fadeOut ease 8s;
+  animation: fade-out ease 10s;
+  -webkit-animation: fade-out ease 10s;
+  -moz-animation: fade-out ease 10s;
+  -o-animation: fade-out ease 10s;
+  -ms-animation: fade-out ease 10s;
 }
-@keyframes fadeOut {
+@keyframes fade-out {
   0% {
     opacity:1;
   }
@@ -328,7 +328,7 @@ hr.rounded {
   }
 }
 
-@-moz-keyframes fadeOut {
+@-moz-keyframes fade-out {
   0% {
     opacity:1;
   }
@@ -337,7 +337,7 @@ hr.rounded {
   }
 }
 
-@-webkit-keyframes fadeOut {
+@-webkit-keyframes fade-out {
   0% {
     opacity:1;
   }
@@ -346,7 +346,7 @@ hr.rounded {
   }
 }
 
-@-o-keyframes fadeOut {
+@-o-keyframes fade-out {
   0% {
     opacity:1;
   }
@@ -355,7 +355,7 @@ hr.rounded {
   }
 }
 
-@-ms-keyframes fadeOut {
+@-ms-keyframes fade-out {
   0% {
     opacity:1;
   }

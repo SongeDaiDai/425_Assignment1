@@ -2,13 +2,13 @@
 <head>
     <meta charset="utf-8">
     <title>425 - Assignment 1 Form</title>
-    <link href="assets/css/form.css" rel="stylesheet" type="text/css">
+    <link href="./assets/css/form.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/a5769a4d9e.js" crossorigin="Anonymous"></script>
 </head>
 
 <body>
 <script src="assets/script/form.js"></script>
-<main>
+<main class="mainp">
 
     <form id="bookForm" action="BookResponse.jsp" method="get">
         <div class="form">
@@ -28,25 +28,25 @@
             </div>
 
             <div class="input-container ic2 form3">
-                <input id="ISBN10" name="ISBN10" class="input" type="number" placeholder=" " onfocusout="testB10()"/>
+                <input id="ISBN10" name="ISBN10" class="input" type="number" placeholder=" " onfocusout="testB10();"/>
                 <div class="cut"></div>
                 <label for="ISBN10" class="placeholder"><i class="fas fa-barcode"></i>&nbsp; ISBN-10</label>
-                <div id="error10" class="error fadeOut"></div>
+                <div id="error10" class="error fade-out"></div>
             </div>
 
             <div class="input-container ic2 form4">
                 <input id="ISBN13" name="ISBN13" class="input" type="number" placeholder=" " onfocusout="testB13()"/>
                 <div class="cut"></div>
                 <label for="ISBN13" class="placeholder"> <i class="fas fa-barcode"></i>&nbsp; ISBN-13</label>
-                <div id="error13" class="error fadeOut"></div>
+                <div id="error13" class="error fade-out"></div>
             </div>
 
                 <div class="input-container ic2 form8">
                     <input id="price" name="price" class="input" type="number" step="0.01" placeholder=" "
                            onfocusout="checkValue()"/>
-                    <div id="cost" class="error fadeOut"></div>
+                    <div id="errorPrice" class="error fade-out"></div>
                     <div class="cut "></div>
-                    <label for="price" class="placeholder "><i class="fas fa-dollar-sign "></i>&nbsp;&nbsp; Price
+                    <label for="price" class="placeholder"><i class="fas fa-dollar-sign "></i>&nbsp;&nbsp; Price
                     </label>
                 </div>
 
@@ -75,7 +75,7 @@
 
 
                 <div class="input-container ic2 form7">
-                    <h3><i class="fas fa-feather-alt"></i>&nbsp;&nbsp; Subject</h3>
+                    <h3><i class="fas fa-feather-alt"></i>&nbsp;&nbsp; Subjects</h3>
                     <div class="content1">
                         <label class="radio-option e1"><input type="checkbox" name="subject" value="Classic">&nbsp;
                             Classic &nbsp;
@@ -91,9 +91,9 @@
                     </div>
 
                 </div>
-                <button class="submit form9" name="send" type="submit" onclick="submitForm();testB10();"> Add The Book &nbsp;&nbsp;<i
+                <button class="submit form9" name="send" type="submit" onclick="checkValue();testB10();testB13();submitForm()"> Add The Book &nbsp;&nbsp;<i
                         class="fas fa-paper-plane"></i></button>
-                <div id="errorForm" class="error fadeOut"></div>
+                <div id="errorForm" class="error fade-out"></div>
 
             </div>
         </div>
