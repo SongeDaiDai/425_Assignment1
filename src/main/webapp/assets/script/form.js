@@ -1,95 +1,76 @@
-b13 = true;
-b10 = false;
-cost = true;
-
 function checkValue() {
     let price = document.getElementById('price').value;
-    let errorCost;
-    if (price === null){
-	errorCost = "";
-        document.getElementById("cost").innerHTML = errorCost;
-	cost = true;
-	return;
-	}
-	else if (price < 50 && price !== 0 || price > 500 && price !== 0) {
-        errorCost = "The Price must be between 50.00$ and 500.00$";
-        document.getElementById("cost").innerHTML = errorCost;
-        cost = false;
+    let errorPrice;
+    if (Number(price) < 50 && Number(price) !== 0 || Number(price) > 500 && Number(price !== 0)) {
+         errorPrice = "The Price must be between 50.00$ and 500.00$";
+		document.getElementById("errorPrice").innerHTML = errorPrice;
+        return false;
     } else {
-        errorCost = "";
-        document.getElementById("cost").innerHTML = errorCost;
-        cost = true;
+	errorPrice = "";
+	return true;
     }
+	
 }
 
 function testB10() {
     let isbn10 = document.getElementById("ISBN10").value;
     let len10 = isbn10.length;
-    error10;
+	let error10;
     if (len10 === 0) {
-        error10 = "ISBN-10 is mandatory. Please enter a 10 digits number.";
+		error10 = "ISBN-10 is mandatory. Please enter a 10 digits number.";
         document.getElementById("error10").innerHTML = error10;
-        b10 = false;
-        return;
+        return false;
     }
     if (len10 !== 10) {
-        error10 = "You have entered " + len10 + " digits out of 10.";
-        document.getElementById("error10").innerHTML = error10;
-        b10 = false;
-        return;
+		error10 = "You have entered " + len10 + " digits out of 10.";
+		document.getElementById("error10").innerHTML = error10;
+    	return false;
     }
     if (len10 === 10) {
-        error10 = "";
-        document.getElementById("error10").innerHTML = error10;
-        b10 = true;
+		error10 ="";
+        return true;
 
     }
 }
-
 function testB13() {
     let isbn13 = document.getElementById("ISBN13").value;
     // Get the value of the input field with id="ISBN10"
     let len13 = isbn13.length;
     let error13;
-    if (isbn13 === null || len13 === 0) {
-        error13 = "";
-        b13 = true;
-        document.getElementById("error13").innerHTML = error13;
-        return;
+    if (len13 === 0) {
+		error13 = "";
+        return true;
     }
     if (len13 === 13) {
-        error13 = " ";
-        document.getElementById("error13").innerHTML = error13;
-        b13 = true;
-        return;
+		error13 = "";    
+    	return true;
     }
     if (len13 !== 13) {
         error13 = "You have entered " + len13 + " out of 13.";
         document.getElementById("error13").innerHTML = error13;
-		b13 = false;
+        return false;
     }
 
 }
-function urlConstructor(){
-
-}
-
 function submitForm() {
-    if (b13 && b10 && cost) {
+
+    if (checkValue() && testB10() || checkValue() && testB13() && testB10()) {
         OpenWindowWithPost();
     } else {
         document.getElementById("bookForm").addEventListener("submit", function (forSub) {
             forSub.preventDefault();
-            let errorForm = "Please verify all of your entries.";
-            document.getElementById("errorForm").innerHTML = errorForm;
+            document.getElementById("errorForm").innerHTML = "Please verify all of your entries.";
         }, false);
     }
 }
 
-function OpenWindowWithPost()
-{
+function OpenWindowWithPost() {
     let form = document.getElementById("bookForm");
-    form.setAttribute("method", "get");
-	form.submit();
-    window.open("BookResponse.jsp","_self",);
-	}
+    let price = document.getElementById('price');
+    form.setAttribute("method", "post");
+    if (price < 50) {
+        document.getElementById('price').value = "0.00";
+    }
+    form.submit();
+    window.open("BookResponse.jsp", "_self",);
+}
