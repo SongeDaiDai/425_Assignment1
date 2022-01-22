@@ -47,8 +47,6 @@ function checkISBN13() {
 function submitForm() {
 
     if (checkPrice() && checkISBN13() && checkISBN10()) {
-        let form = document.getElementById("bookForm");
-    	form.submit();
         return true;
     } else {
 		document.getElementById("errorForm").innerHTML = "Please verify all of your entries.";

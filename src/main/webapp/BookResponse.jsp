@@ -24,16 +24,23 @@
 	<%!
 		public String displayValue(String value) {
 			if(value == "" || value == null) {
-				return "<em>undefined</em>";
+				return "<em>Undefined</em>";
 			}
 			return value;
+		}
+	
+		public String displayPrice(String price) {
+			if(price == "" || price == null) {
+				return "0.00";
+			}
+			return price;
 		}
 	
 		public String displayValues(String[] values) {
 			String returnString = "";
 						
 			if(values == null) {
-				returnString = "<em>undefined</em>";
+				returnString = "<em>Undefined</em>";
 			} else {
 				for(String value : values) {
 					returnString += "<li>" + value + "</li>";
@@ -91,7 +98,7 @@
             
             <hr class="rounded">
 
-            <div class="price">Price:&nbsp;<b><%= displayValue(price) %></b>&nbsp;
+            <div class="price">Price:&nbsp;<b><%= displayPrice(price) %></b>&nbsp;
                <i class="fas fa-dollar-sign" style="color: darkgray;"></i>
             </div>
 
