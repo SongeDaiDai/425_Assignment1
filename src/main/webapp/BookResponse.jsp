@@ -81,7 +81,9 @@
             <br />
             
             <div class=" entries "><i class="fas fa-heading"></i>&nbsp;&nbsp;Publisher:
+
 	            <ul class="form-entry">
+
 	                <%= displayValues(publishers) %>
 	            </ul>
             </div>
@@ -91,14 +93,18 @@
             </div>
             
             <div class=" entries "><i class="fas fa-feather-alt"></i>&nbsp;&nbsp;Subject(s):
+
 	            <ul class="form-entry">
+
 	                <%= displayValues(subjects) %>
 	            </ul>
             </div>
             
             <hr class="rounded">
 
+
             <div class="price">Price:&nbsp;<b style="color: #fff"><%= displayPrice(price) %></b>&nbsp;
+
                <i class="fas fa-dollar-sign" style="color: darkgray;"></i>
             </div>
 

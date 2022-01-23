@@ -7,15 +7,19 @@ function checkPrice() {
         document.getElementById("errorPrice").innerHTML = errorPrice;
         return false;
 	}
+
     errorPrice =" ";
     document.getElementById("errorPrice").innerHTML = errorPrice;
+
     return true;
 }
 
 function checkISBN10() {
     let isbn10 = document.getElementById("ISBN10").value;
     let len10 = isbn10.length;
+
     let error10 = " ";
+
     
     if (len10 === 0) {
         error10 = "ISBN-10 is mandatory. Please enter a 10 digits number.";
@@ -26,8 +30,10 @@ function checkISBN10() {
         document.getElementById("error10").innerHTML = error10;
         return false;
     }
+
 	error10=" ";
 	document.getElementById("error10").innerHTML = error10;
+
     return true;
     
 }
@@ -36,14 +42,17 @@ function checkISBN13() {
     let isbn13 = document.getElementById("ISBN13").value;
     let len13 = isbn13.length;
     let error13 = " ";
+
     
     if (len13 !== 0 && len13 !== 13) {
         error13 = "You have entered " + len13 + " out of 13.";
         document.getElementById("error13").innerHTML = error13;
         return false;
     }   
+
     error13 = " ";
     document.getElementById("error13").innerHTML = error13;
+
     return true;
 }
 
